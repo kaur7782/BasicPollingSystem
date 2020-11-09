@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Poll Index Page</title>
+</head>
+<style>
+h2 {
+	  color:navy;
+	  text-align:center;
+	};
+</style>
+<body>
+	
+	<h2>Please choose your poll</h2>
+	
+	<form method="post" action="" th:action=@{/selectPoll}
+		th:object="${poll}">
+		<input type="hidden" name="pollId" th:field="*{pollId}" />
+		Poll Options: <select th:field="*{title}">
+			<option th:each="t:*{titles}" th:value="${t}" th:text="${t}" />
+		</select>
+		<br>
+		<br>
+		<input type="submit" value="Let's go!"/>
+
+	</form>
+
+
+</body>
+</html>

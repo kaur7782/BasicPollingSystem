@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Play page for index</title>
+</head>
+<style>
+h1 {
+	  color:navy;
+	  text-align:center;
+	};
+table, tr, td{
+	color:navy;
+	text-align:center;
+	};
+
+</style>
+<body>
+
+	<h1>Choose!!</h1>
+	<table>
+		<tr>
+		<td>Title: </td>
+		<td th:text="${poll.title}">pray</td>
+		</tr>
+		<tr>
+		<td>Question: </td>
+		<td th:text="${poll.questions[poll.id]}">pray</td>
+		</tr>
+		
+	</table>
+	<form method="post" action="" th:action="@{/playPoll}"
+		th:object="${poll}">
+		Poll Options: <select th:field="*{answer}">
+			<option  th:value="${poll.answer1[poll.id]}" th:text="${poll.answer1[poll.id]}" />
+			<option th:value="${poll.answer2[poll.id]}" th:text="${poll.answer2[poll.id]}" />
+			<option th:value="${poll.answer3[poll.id]}" th:text="${poll.answer3[poll.id]}" />
+		</select>
+		<input type="submit" value="Submit!" />
+	
+		
+		</form>
+
+
+</body>
+</html>

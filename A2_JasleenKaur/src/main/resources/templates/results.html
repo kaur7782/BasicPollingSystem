@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+
+h1 {
+	  color:navy;
+	  text-align:center;
+	};
+h2{
+	text-align:center;
+};
+
+
+</style>
+<body>
+<h1>Wohoo!! You completed the Poll!</h1>
+<h2>Let's see how many people agree with you</h2>
+
+<table>
+		<tr>
+		<td>Title: </td>
+		<td th:text="${poll.titles[poll.id]}">pray</td>
+		</tr>
+		<tr>
+		<td>Question: </td>
+		<td th:text="${poll.questions[poll.id]}">pray</td>
+		</tr>
+		<tr>
+		<td>Your Answer: </td>
+		<td th:text="${poll.answer}">pray</td>
+		</tr>
+		<tr></tr>
+		<tr>
+		<td>Answer 1: </td>
+		<td th:text="${poll.answer1[poll.id]}">pray</td>
+		</tr>
+		<tr>
+		<td>Answer 2: </td>
+		<td th:text="${poll.answer2[poll.id]}">pray</td>
+		</tr>
+		<tr>
+		<td>Answer 3: </td>
+		<td th:text="${poll.answer3[poll.id]}">pray</td>
+		</tr>
+		<tr></tr>
+		<tr>
+		<td>Votes for Answer 1: </td>
+		<td th:text="${poll.votes1[poll.id]}">pray</td>
+		</tr>
+		<tr>
+		<td>Votes for Answer 2: </td>
+		<td th:text="${poll.votes2[poll.id]}">pray</td>
+		</tr>
+		<tr>
+		<td>Votes for Answer 3: </td>
+		<td th:text="${poll.votes3[poll.id]}">pray</td>
+		</tr>
+
+</table>
+
+</body>
+</html>
